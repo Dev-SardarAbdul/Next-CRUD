@@ -4,7 +4,7 @@ import React from "react";
 const getTopic = async (id: any) => {
   try {
     const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
-      cache: "no-store",
+      cache: "no-cache",
     });
 
     if (!res.ok) {
