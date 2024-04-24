@@ -10,7 +10,9 @@ const getTopic = async (id: any) => {
     if (!res.ok) {
       throw new Error("Error fetch topic");
     }
-    return res.json();
+    if (res.ok) {
+      return res.json();
+    }
   } catch (error) {
     console.log(error);
   }
