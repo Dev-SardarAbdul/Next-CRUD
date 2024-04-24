@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="py-4 my-4 flex justify-between items-center gap-2">
       <Link href={"/"}>
         <h4 className="text-mainColor text-3xl font-semibold cursor-pointer">
-          Fig Flow{" "}
+          Topics App
         </h4>
       </Link>
       <Link href={"/add-topic"}>
