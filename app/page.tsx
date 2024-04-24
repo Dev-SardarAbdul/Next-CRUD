@@ -23,27 +23,28 @@ export default async function Home() {
 
   return (
     <main className="py-4 flex flex-col gap-4">
-      {topics.map((topic: any) => (
-        <div
-          key={topic._id}
-          className="border border-lightGrayish rounded-lg p-4"
-        >
-          <div className="flex justify-between items-center gap-4">
-            <h4 className="text-white text-opacity-80 text-3xl font-semibold">
-              {topic.title}
-            </h4>
-            <div className="flex justify-center items-center gap-2">
-              <DeleteBtn id={topic._id} />
-              <Link href={`/edit-topic/${topic._id}`}>
-                <MdEdit className="text-mainColor text-2xl" />
-              </Link>
+      {topics &&
+        topics.map((topic: any) => (
+          <div
+            key={topic._id}
+            className="border border-lightGrayish rounded-lg p-4"
+          >
+            <div className="flex justify-between items-center gap-4">
+              <h4 className="text-white text-opacity-80 text-3xl font-semibold">
+                {topic.title}
+              </h4>
+              <div className="flex justify-center items-center gap-2">
+                <DeleteBtn id={topic._id} />
+                <Link href={`/edit-topic/${topic._id}`}>
+                  <MdEdit className="text-mainColor text-2xl" />
+                </Link>
+              </div>
             </div>
+            <p className="text-base text-lightGrayish mt-2">
+              {topic.description}
+            </p>
           </div>
-          <p className="text-base text-lightGrayish mt-2">
-            {topic.description}
-          </p>
-        </div>
-      ))}
+        ))}
     </main>
   );
 }
